@@ -2,10 +2,7 @@ package com.lbadvisor.work.service;
 
 import com.alibaba.fastjson.JSONObject;
 import com.lbadvisor.work.dao.LbadvisorUserDao;
-import com.lbadvisor.work.dao.LbadvisorUserLogDao;
 import com.lbadvisor.work.entity.LbadvisorUser;
-import com.lbadvisor.work.entity.LbadvisorUserLog;
-import com.lbadvisor.work.utils.BeanToMapUtil;
 import com.lbadvisor.work.utils.HttpRequest;
 import com.lbadvisor.work.utils.Response;
 import org.slf4j.Logger;
@@ -13,10 +10,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.beans.IntrospectionException;
-import java.lang.reflect.InvocationTargetException;
 import java.util.Date;
-import java.util.Map;
 
 /**
  *
@@ -38,8 +32,6 @@ public class MainServiceV1 {
     @Autowired
     private LbadvisorUserDao lbadvisorUserDao;
 
-    @Autowired
-    private LbadvisorUserLogDao lbadvisorUserLogDao;
     /**
      * 获取openId
      * @param code

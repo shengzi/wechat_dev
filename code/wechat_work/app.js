@@ -42,7 +42,7 @@ App({
             'content-type': 'application/x-www-form-urlencoded'
           },
           success: function (res) {
-            console.log(res.data)
+           
           }
         })
       },
@@ -56,7 +56,7 @@ App({
             'content-type': 'application/x-www-form-urlencoded'
           },
           success: function (res) {
-            console.log(res.data)
+            
           }
         })
       }
