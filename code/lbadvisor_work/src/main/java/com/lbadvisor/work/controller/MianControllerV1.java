@@ -1,5 +1,6 @@
 package com.lbadvisor.work.controller;
 
+import com.lbadvisor.work.entity.LbadvisorUser;
 import com.lbadvisor.work.service.MainServiceV1;
 import com.lbadvisor.work.utils.Response;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,5 +26,15 @@ public class MianControllerV1 {
     @RequestMapping(value = "onLogin",method = RequestMethod.GET)
     public Response login(@RequestParam String code) {
         return mainServiceV1.getOpenIdByCode(code);
+    }
+
+    /**
+     * 保存用户
+     * @param lbadvisorUser
+     * @return
+     */
+    @RequestMapping(value = "onUserSave",method = RequestMethod.POST)
+    public Response onUserSave(@RequestParam LbadvisorUser lbadvisorUser) {
+        return mainServiceV1.saveUser(lbadvisorUser);
     }
 }

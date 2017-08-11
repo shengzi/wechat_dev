@@ -13,7 +13,7 @@ import com.lbadvisor.work.dao.LbadvisorUserLogDao;
  * <B>功能简述</B><br>
  * LbadvisorUserLog service 类
  * 
- * @date  2017年08月11日 10:17:31
+ * @date  2017年08月11日 12:56:54
  * @since     [工作日志 /service v1.0]
  */
 @Service
@@ -28,7 +28,7 @@ public class LbadvisorUserLogService extends MyBatisService<LbadvisorUserLog, In
 	 * <B>功能简述</B><br>
 	 * 保存LbadvisorUserLog
 	 * 
-	 * @date 2017年08月11日 10:17:31
+	 * @date 2017年08月11日 12:56:54
 	 * @param lbadvisorUserLog
 	 * @return
 	 */
@@ -51,7 +51,7 @@ public class LbadvisorUserLogService extends MyBatisService<LbadvisorUserLog, In
 	 * <B>功能简述</B><br>
 	 * 删除LbadvisorUserLog某条记录
 	 * 
-	 * @date 2017年08月11日 10:17:31
+	 * @date 2017年08月11日 12:56:54
 	 * @param id
 	 *            lbadvisorUserLog ID
 	 * @return

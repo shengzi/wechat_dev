@@ -18,10 +18,11 @@
 			<result column="gender" property="gender" jdbcType="INTEGER" />
 			<result column="backup" property="backup" jdbcType="VARCHAR" />
 			<result column="backup2" property="backup2" jdbcType="VARCHAR" />
+			<result column="province" property="province" jdbcType="VARCHAR" />
 	</resultMap>
 	
 	<sql id="Base_Column_List">
-		l.id,l.openid,l.city,l.country,l.name,l.nick_name,l.photo,l.create_time,l.update_time,l.app_id,l.gender,l.backup,l.backup2
+		l.id,l.openid,l.city,l.country,l.name,l.nick_name,l.photo,l.create_time,l.update_time,l.app_id,l.gender,l.backup,l.backup2,l.province
 	</sql>	
 	
 	<!-- 获取LbadvisorUser详情 -->
@@ -92,6 +93,9 @@
 			<if test="backup2 != null">
 				backup2,
 			</if>
+			<if test="province != null">
+				province,
+			</if>
 		</trim>
 		<trim prefix="values (" suffix=")" suffixOverrides=",">
 			<if test="id != null">
@@ -132,6 +136,9 @@
 			</if>
 			<if test="backup2 != null">
 				 #{backup2, jdbcType=VARCHAR} ,
+			</if>
+			<if test="province != null">
+				 #{province, jdbcType=VARCHAR} ,
 			</if>
 		</trim>
 	</insert>
@@ -179,6 +186,9 @@
 			</if>
 			<if test="backup2 != null">
 				backup2 = #{backup2,jdbcType=VARCHAR},
+			</if>
+			<if test="province != null">
+				province = #{province,jdbcType=VARCHAR},
 			</if>
 		</set> 
 		WHERE 

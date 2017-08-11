@@ -1,18 +1,13 @@
 package com.lbadvisor.work.service;
 
-import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
+import com.lbadvisor.work.entity.LbadvisorUser;
 import com.lbadvisor.work.utils.HttpRequest;
 import com.lbadvisor.work.utils.Response;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import com.lbadvisor.work.entity.LbadvisorSubUser;
-import com.lbadvisor.work.utils.orm.mybatis.MyBatisDao;
-import com.lbadvisor.work.utils.orm.mybatis.MyBatisService;
-import com.lbadvisor.work.dao.LbadvisorSubUserDao;
 
 /**
  *
@@ -26,8 +21,13 @@ import com.lbadvisor.work.dao.LbadvisorSubUserDao;
 public class MainServiceV1 {
 
     private static String appid = "wx022ccc17b7ab8b38";
+
+    private static String secret = "e2ec5f79376448379d4fb4380e6dd2d8";
+
     private static final Logger log = LoggerFactory.getLogger(MainServiceV1.class);
 
+    @Autowired
+    private LbadvisorUserService lbadvisorUserService;
     /**
      * 获取openId
      * @param code
@@ -36,7 +36,7 @@ public class MainServiceV1 {
     public Response getOpenIdByCode(String code) {
         JSONObject obj = null;
         try {
-            String rlt = HttpRequest.sendRedirect("https://api.weixin.qq.com/sns/jscode2session?appid=" + appid + "&secret=SECRET&js_code=JSCODE&grant_type=authorization_code");
+            String rlt = HttpRequest.sendRedirect("https://api.weixin.qq.com/sns/jscode2session?appid=" + appid + "&secret="+secret+"&js_code="+code+"&grant_type=authorization_code");
             obj = JSONObject.parseObject(rlt);
             if (null == obj.get("openid")) {
                 log.info("rlt:",rlt);
@@ -47,6 +47,12 @@ public class MainServiceV1 {
             return new Response().failure("请求失败请稍后再试");
         }
         return new Response().success(obj.get("openid"));
+    }
+
+    public Response saveUser(LbadvisorUser lbadvisorUser) {
+        //TODO 时间
+        lbadvisorUserService.insert(lbadvisorUser);
+        return new Response().success("添加成功");
     }
 
 }

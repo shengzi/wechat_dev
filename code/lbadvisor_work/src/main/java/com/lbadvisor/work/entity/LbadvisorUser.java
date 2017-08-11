@@ -8,7 +8,7 @@ import java.util.Date;
  * <B>功能简述</B><br>
  * LbadvisorUser实体类
  * 
- * @date 2017年08月11日 10:17:31
+ * @date 2017年08月11日 12:56:54
  * @since     [工作日志 / LbadvisorUser v1.0]
  */
 public class LbadvisorUser{
@@ -65,6 +65,10 @@ public class LbadvisorUser{
 	 * 
 	 */
 	private String backup2;
+	/**
+	 * 
+	 */
+	private String province;
 
 
 	public int getId(){
@@ -169,6 +173,14 @@ public class LbadvisorUser{
 	
 	public void setBackup2(String backup2){
 		this.backup2 = backup2;
+	}
+
+	public String getProvince(){
+		return this.province;
+	}
+	
+	public void setProvince(String province){
+		this.province = province;
 	}
 	
 	/**
