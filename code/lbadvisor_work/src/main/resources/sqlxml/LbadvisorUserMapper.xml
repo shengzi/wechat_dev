@@ -39,7 +39,7 @@
 		<include refid="Base_Column_List"/>
 		FROM lbadvisor_user l
 		WHERE
-		l.id=#{id}
+		l.openid=#{openid}
 	</select>
 	<!-- 查询LbadvisorUser 列表-->
 	<select id="find" parameterType="map" resultMap="BaseResultMap" >

@@ -63,11 +63,13 @@ public class MainServiceV1 {
 
     public Response saveUser(LbadvisorUser lbadvisorUser) {
         lbadvisorUser.setAppId(appid);
-        if (null == lbadvisorUserDao.getByOpenId(lbadvisorUser.getOpenid())) {
+        LbadvisorUser oldLbadvisorUser=lbadvisorUserDao.getByOpenId(lbadvisorUser.getOpenid());
+        if (null == oldLbadvisorUser) {
             lbadvisorUser.setCreateTime(new Date());
             lbadvisorUser.setUpdateTime(new Date());
             lbadvisorUserDao.insert(lbadvisorUser);
         } else {
+            lbadvisorUser.setId(oldLbadvisorUser.getId());
             lbadvisorUser.setUpdateTime(new Date());
             lbadvisorUserDao.update(lbadvisorUser);
         }
