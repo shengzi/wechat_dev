@@ -34,10 +34,16 @@ public class MainServiceV1 {
      * @return
      */
     public Response getOpenIdByCode(String code) {
-        String rlt = HttpRequest.sendRedirect("https://api.weixin.qq.com/sns/jscode2session?appid=" + appid + "&secret=SECRET&js_code=JSCODE&grant_type=authorization_code");
-        JSONObject obj = JSONObject.parseObject(rlt);
-        if (null == obj.get("openid")) {
-            log.info("rlt:",rlt);
+        JSONObject obj = null;
+        try {
+            String rlt = HttpRequest.sendRedirect("https://api.weixin.qq.com/sns/jscode2session?appid=" + appid + "&secret=SECRET&js_code=JSCODE&grant_type=authorization_code");
+            obj = JSONObject.parseObject(rlt);
+            if (null == obj.get("openid")) {
+                log.info("rlt:",rlt);
+                return new Response().failure("请求失败请稍后再试");
+            }
+        } catch (Exception e) {
+            log.error("getOpenIdByCode is error:",e);
             return new Response().failure("请求失败请稍后再试");
         }
         return new Response().success(obj.get("openid"));

@@ -18,7 +18,7 @@ public class MianControllerV1 {
     private MainServiceV1 mainServiceV1;
 
     /**
-     * 查询关键词
+     * 登录获取openId
      * @param code
      * @return
      */
