@@ -3,8 +3,12 @@ package com.lbadvisor.work.controller;
 import com.lbadvisor.work.entity.LbadvisorUser;
 import com.lbadvisor.work.service.MainServiceV1;
 import com.lbadvisor.work.utils.Response;
+import com.lbadvisor.work.utils.Utils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import javax.servlet.http.HttpServletRequest;
+import java.util.Map;
 
 /**
  *登录
@@ -34,7 +38,7 @@ public class MianControllerV1 {
      * @return
      */
     @RequestMapping(value = "onUserSave",method = RequestMethod.POST)
-    public Response onUserSave(@RequestParam LbadvisorUser lbadvisorUser) {
+    public Response onUserSave(LbadvisorUser lbadvisorUser, HttpServletRequest request) {
         return mainServiceV1.saveUser(lbadvisorUser);
     }
 }

@@ -15,5 +15,12 @@ import com.lbadvisor.work.utils.orm.mybatis.MyBatisDao;
 @Component
 public class LbadvisorUserDao extends MyBatisDao<LbadvisorUser, Integer>{
 
-	
+    /**
+     * 根据openId获取用户
+     * @param openid
+     * @return
+     */
+    public LbadvisorUser getByOpenId(String openid) {
+        return getSqlSession().selectOne("getByOpenId",openid);
+    }
 } 

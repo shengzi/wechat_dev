@@ -33,7 +33,14 @@
 		WHERE 
 		l.id=#{id}
 	</select>
-	
+	<!-- 获取LbadvisorUser详情 -->
+	<select id="getByOpenId" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+		SELECT
+		<include refid="Base_Column_List"/>
+		FROM lbadvisor_user l
+		WHERE
+		l.id=#{id}
+	</select>
 	<!-- 查询LbadvisorUser 列表-->
 	<select id="find" parameterType="map" resultMap="BaseResultMap" >
 		SELECT 

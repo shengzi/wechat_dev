@@ -7,8 +7,8 @@
 	</properties>
 	<typeAliases>
 		<typeAlias alias="LbadvisorSubUser" type="com.lbadvisor.work.entity.LbadvisorSubUser" />
-		<typeAlias alias="LbadvisorUserLog" type="com.lbadvisor.work.entity.LbadvisorUser" />
-		<typeAlias alias="LbadvisorUser" type="com.lbadvisor.work.entity.LbadvisorUserLog" />
+		<typeAlias alias="LbadvisorUser" type="com.lbadvisor.work.entity.LbadvisorUser" />
+		<typeAlias alias="LbadvisorUserLog" type="com.lbadvisor.work.entity.LbadvisorUserLog" />
 	</typeAliases>
 
 	<plugins>
