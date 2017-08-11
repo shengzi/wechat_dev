@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="lbadvisor_work:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="lbadvisor_work.war">
+      <element id="artifact" artifact-name="lbadvisor_work:war exploded" />
+    </root>
+  </artifact>
+</component>

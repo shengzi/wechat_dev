@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<properties>
+		<property name="dialect" value="MYSQL" />
+	</properties>
+	<typeAliases>
+		<typeAlias alias="LbadvisorSubUser" type="com.lbadvisor.work.entity.LbadvisorSubUser" />
+		<typeAlias alias="LbadvisorUserLog" type="com.lbadvisor.work.entity.LbadvisorUser" />
+		<typeAlias alias="LbadvisorUser" type="com.lbadvisor.work.entity.LbadvisorUserLog" />
+	</typeAliases>
+
+	<plugins>
+		<plugin interceptor="com.lbadvisor.work.utils.orm.page.PaginationInterceptor" />
+	</plugins>
+
+</configuration>
