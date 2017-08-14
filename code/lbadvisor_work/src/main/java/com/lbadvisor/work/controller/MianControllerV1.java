@@ -16,7 +16,7 @@ import java.util.Map;
  */
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
-@RequestMapping("/whchat/v1")
+@RequestMapping("lbadvisor_work/whchat/v1")
 public class MianControllerV1 {
 
     @Autowired
