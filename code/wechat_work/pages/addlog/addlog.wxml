@@ -1,0 +1,22 @@
+<form bindsubmit="formSubmit" bindreset="formReset">
+    <picker bindchange="bindPickerChange" name="workProudctName" value="{{index}}" range="{{array}}">
+      <view class="log-input bg-g" style="padding-bottom:20rpx">
+        <view>产品 :</view>
+        <view class="center">{{array[index]}}</view>
+      </view>
+    </picker>
+    <picker bindchange="bindPickerChangeHour" name="workHour" value="{hourIndex}}" range="{{hourArray}}">
+      <view class="log-input bg-w">
+        <view>小时 :</view>
+        <view class="center"> {{hourArray[hourIndex]}}</view>
+      </view>
+    </picker>
+    <view class="log-input bg-g">
+      <view>备注</view>
+      <input name="openid" hidden="hidden" value="{{openid}}"/>
+    </view>
+    <view class="bg-w">
+      <view><textarea name="userLog"/></view>
+    </view>
+    <button class="log-but" formType="submit">提交</button>
+</form>
