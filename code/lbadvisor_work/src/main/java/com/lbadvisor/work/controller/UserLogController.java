@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletRequest;
 @RestController
 @RequestMapping("/whchat/userLog")
 public class UserLogController {
-    ///Users/yml/lbadvisor/work_space/wechat_dev/code/lbadvisor_work/src/main/java/com/lbadvisor/work/dao/LbadvisorSubUserDao.java
+
     @Autowired
     private LbadvisorUserLogService lbadvisorUserLogService;
 
