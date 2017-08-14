@@ -1,12 +1,28 @@
 {
   "pages":[
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/post/post"
   ],
   "window":{
     "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle":"black"
-  }
+    "navigationBarBackgroundColor":"#444",
+    "navigationBarTitleText": "比邻日志",
+    "navigationBarTextStyle":"white"
+  },
+  "tabBar": {
+    "color": "#000",
+    "selectedColor": "pink",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "主页"
+       },
+      {
+        "pagePath": "pages/post/post",
+        "text": "我的日志"
+        }
+    ]
+  },
+  "debug": true
 }
