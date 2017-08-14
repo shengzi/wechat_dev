@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="LbadvisorUser">
+
+	<resultMap id="BaseResultMap" type="com.lbadvisor.work.entity.LbadvisorUser">
+			<result column="id" property="id" jdbcType="INTEGER" />
+			<result column="openid" property="openid" jdbcType="VARCHAR" />
+			<result column="city" property="city" jdbcType="VARCHAR" />
+			<result column="country" property="country" jdbcType="VARCHAR" />
+			<result column="name" property="name" jdbcType="VARCHAR" />
+			<result column="nick_name" property="nickName" jdbcType="VARCHAR" />
+			<result column="photo" property="photo" jdbcType="VARCHAR" />
+			<result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+			<result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
+			<result column="app_id" property="appId" jdbcType="VARCHAR" />
+			<result column="gender" property="gender" jdbcType="INTEGER" />
+			<result column="backup" property="backup" jdbcType="VARCHAR" />
+			<result column="backup2" property="backup2" jdbcType="VARCHAR" />
+			<result column="province" property="province" jdbcType="VARCHAR" />
+	</resultMap>
+	
+	<sql id="Base_Column_List">
+		l.id,l.openid,l.city,l.country,l.name,l.nick_name,l.photo,l.create_time,l.update_time,l.app_id,l.gender,l.backup,l.backup2,l.province
+	</sql>	
+	
+	<!-- 获取LbadvisorUser详情 -->
+	<select id="get" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+		SELECT 
+		<include refid="Base_Column_List"/> 
+		FROM lbadvisor_user l 
+		WHERE 
+		l.id=#{id}
+	</select>
+	<!-- 获取LbadvisorUser详情 -->
+	<select id="getByOpenId" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+		SELECT
+		<include refid="Base_Column_List"/>
+		FROM lbadvisor_user l
+		WHERE
+		l.openid=#{openid}
+	</select>
+	<!-- 查询LbadvisorUser 列表-->
+	<select id="find" parameterType="map" resultMap="BaseResultMap" >
+		SELECT 
+		<include refid="Base_Column_List"/>  
+		FROM lbadvisor_user l
+	</select>
+	
+	<!-- 查询LbadvisorUser总数 -->
+	<select id="count" parameterType="map" resultType="int">
+		SELECT 
+		COUNT(*) 
+		FROM 
+		lbadvisor_user l
+	</select>
+	
+	<!-- 插入LbadvisorUser -->
+	<insert id="insert" parameterType="LbadvisorUser" useGeneratedKeys="true" keyProperty="id">
+		INSERT INTO 
+		lbadvisor_user 
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="id != null">
+				id,
+			</if>
+			<if test="openid != null">
+				openid,
+			</if>
+			<if test="city != null">
+				city,
+			</if>
+			<if test="country != null">
+				country,
+			</if>
+			<if test="name != null">
+				name,
+			</if>
+			<if test="nickName != null">
+				nick_name,
+			</if>
+			<if test="photo != null">
+				photo,
+			</if>
+			<if test="createTime != null">
+				create_time,
+			</if>
+			<if test="updateTime != null">
+				update_time,
+			</if>
+			<if test="appId != null">
+				app_id,
+			</if>
+			<if test="gender != null">
+				gender,
+			</if>
+			<if test="backup != null">
+				backup,
+			</if>
+			<if test="backup2 != null">
+				backup2,
+			</if>
+			<if test="province != null">
+				province,
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="id != null">
+				 #{id, jdbcType=INTEGER} ,
+			</if>
+			<if test="openid != null">
+				 #{openid, jdbcType=VARCHAR} ,
+			</if>
+			<if test="city != null">
+				 #{city, jdbcType=VARCHAR} ,
+			</if>
+			<if test="country != null">
+				 #{country, jdbcType=VARCHAR} ,
+			</if>
+			<if test="name != null">
+				 #{name, jdbcType=VARCHAR} ,
+			</if>
+			<if test="nickName != null">
+				 #{nickName, jdbcType=VARCHAR} ,
+			</if>
+			<if test="photo != null">
+				 #{photo, jdbcType=VARCHAR} ,
+			</if>
+			<if test="createTime != null">
+				 #{createTime, jdbcType=TIMESTAMP} ,
+			</if>
+			<if test="updateTime != null">
+				 #{updateTime, jdbcType=TIMESTAMP} ,
+			</if>
+			<if test="appId != null">
+				 #{appId, jdbcType=VARCHAR} ,
+			</if>
+			<if test="gender != null">
+				 #{gender, jdbcType=INTEGER} ,
+			</if>
+			<if test="backup != null">
+				 #{backup, jdbcType=VARCHAR} ,
+			</if>
+			<if test="backup2 != null">
+				 #{backup2, jdbcType=VARCHAR} ,
+			</if>
+			<if test="province != null">
+				 #{province, jdbcType=VARCHAR} ,
+			</if>
+		</trim>
+	</insert>
+	
+	<!-- 更新LbadvisorUser -->
+	<update id="update" parameterType="LbadvisorUser">
+		UPDATE 
+		lbadvisor_user 
+		<set> 
+			<if test="id != null">
+				id = #{id,jdbcType=INTEGER},
+			</if>
+			<if test="openid != null">
+				openid = #{openid,jdbcType=VARCHAR},
+			</if>
+			<if test="city != null">
+				city = #{city,jdbcType=VARCHAR},
+			</if>
+			<if test="country != null">
+				country = #{country,jdbcType=VARCHAR},
+			</if>
+			<if test="name != null">
+				name = #{name,jdbcType=VARCHAR},
+			</if>
+			<if test="nickName != null">
+				nick_name = #{nickName,jdbcType=VARCHAR},
+			</if>
+			<if test="photo != null">
+				photo = #{photo,jdbcType=VARCHAR},
+			</if>
+			<if test="createTime != null">
+				create_time = #{createTime,jdbcType=TIMESTAMP},
+			</if>
+			<if test="updateTime != null">
+				update_time = #{updateTime,jdbcType=TIMESTAMP},
+			</if>
+			<if test="appId != null">
+				app_id = #{appId,jdbcType=VARCHAR},
+			</if>
+			<if test="gender != null">
+				gender = #{gender,jdbcType=INTEGER},
+			</if>
+			<if test="backup != null">
+				backup = #{backup,jdbcType=VARCHAR},
+			</if>
+			<if test="backup2 != null">
+				backup2 = #{backup2,jdbcType=VARCHAR},
+			</if>
+			<if test="province != null">
+				province = #{province,jdbcType=VARCHAR},
+			</if>
+		</set> 
+		WHERE 
+		id=#{id}
+	</update>
+	
+	<!-- 删除LbadvisorUser -->
+	<delete id="delete" parameterType="java.lang.Integer">
+		DELETE 
+		FROM 
+		lbadvisor_user 
+		WHERE 
+		id=#{id}
+	</delete>
+	
+</mapper> 

@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="LbadvisorUserLog">
+
+	<resultMap id="BaseResultMap" type="com.lbadvisor.work.entity.LbadvisorUserLog">
+			<result column="id" property="id" jdbcType="INTEGER" />
+			<result column="user_id" property="userId" jdbcType="INTEGER" />
+			<result column="user_log" property="userLog" jdbcType="LONGVARCHAR" />
+			<result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+			<result column="work_hour" property="workHour" jdbcType="INTEGER" />
+			<result column="work_proudct_name" property="workProudctName" jdbcType="VARCHAR" />
+			<result column="backup" property="backup" jdbcType="VARCHAR" />
+			<result column="backup2" property="backup2" jdbcType="VARCHAR" />
+	</resultMap>
+	
+	<sql id="Base_Column_List">
+		l.id,l.user_id,l.user_log,l.create_time,l.work_hour,l.work_proudct_name,l.backup,l.backup2
+	</sql>	
+	
+	<!-- 获取LbadvisorUserLog详情 -->
+	<select id="get" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+		SELECT 
+		<include refid="Base_Column_List"/> 
+		FROM lbadvisor_user_log l 
+		WHERE 
+		l.id=#{id}
+	</select>
+	
+	<!-- 查询LbadvisorUserLog 列表-->
+	<select id="find" parameterType="map" resultMap="BaseResultMap" >
+		SELECT 
+		<include refid="Base_Column_List"/>  
+		FROM lbadvisor_user_log l
+	</select>
+	
+	<!-- 查询LbadvisorUserLog总数 -->
+	<select id="count" parameterType="map" resultType="int">
+		SELECT 
+		COUNT(*) 
+		FROM 
+		lbadvisor_user_log l
+	</select>
+	
+	<!-- 插入LbadvisorUserLog -->
+	<insert id="insert" parameterType="LbadvisorUserLog" useGeneratedKeys="true" keyProperty="id">
+		INSERT INTO 
+		lbadvisor_user_log 
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="id != null">
+				id,
+			</if>
+			<if test="userId != null">
+				user_id,
+			</if>
+			<if test="userLog != null">
+				user_log,
+			</if>
+			<if test="createTime != null">
+				create_time,
+			</if>
+			<if test="workHour != null">
+				work_hour,
+			</if>
+			<if test="workProudctName != null">
+				work_proudct_name,
+			</if>
+			<if test="backup != null">
+				backup,
+			</if>
+			<if test="backup2 != null">
+				backup2,
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="id != null">
+				 #{id, jdbcType=INTEGER} ,
+			</if>
+			<if test="userId != null">
+				 #{userId, jdbcType=INTEGER} ,
+			</if>
+			<if test="userLog != null">
+				 #{userLog, jdbcType=LONGVARCHAR} ,
+			</if>
+			<if test="createTime != null">
+				 #{createTime, jdbcType=TIMESTAMP} ,
+			</if>
+			<if test="workHour != null">
+				 #{workHour, jdbcType=INTEGER} ,
+			</if>
+			<if test="workProudctName != null">
+				 #{workProudctName, jdbcType=VARCHAR} ,
+			</if>
+			<if test="backup != null">
+				 #{backup, jdbcType=VARCHAR} ,
+			</if>
+			<if test="backup2 != null">
+				 #{backup2, jdbcType=VARCHAR} ,
+			</if>
+		</trim>
+	</insert>
+	
+	<!-- 更新LbadvisorUserLog -->
+	<update id="update" parameterType="LbadvisorUserLog">
+		UPDATE 
+		lbadvisor_user_log 
+		<set> 
+			<if test="id != null">
+				id = #{id,jdbcType=INTEGER},
+			</if>
+			<if test="userId != null">
+				user_id = #{userId,jdbcType=INTEGER},
+			</if>
+			<if test="userLog != null">
+				user_log = #{userLog,jdbcType=LONGVARCHAR},
+			</if>
+			<if test="createTime != null">
+				create_time = #{createTime,jdbcType=TIMESTAMP},
+			</if>
+			<if test="workHour != null">
+				work_hour = #{workHour,jdbcType=INTEGER},
+			</if>
+			<if test="workProudctName != null">
+				work_proudct_name = #{workProudctName,jdbcType=VARCHAR},
+			</if>
+			<if test="backup != null">
+				backup = #{backup,jdbcType=VARCHAR},
+			</if>
+			<if test="backup2 != null">
+				backup2 = #{backup2,jdbcType=VARCHAR},
+			</if>
+		</set> 
+		WHERE 
+		id=#{id}
+	</update>
+
+	<!-- 获取LbadvisorUserLog详情 -->
+	<select id="getByUserId" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+		SELECT
+		<include refid="Base_Column_List"/>
+		FROM lbadvisor_user_log l
+		WHERE
+		l.user_id=#{userId}
+	</select>
+
+	<!-- 删除LbadvisorUserLog -->
+	<delete id="delete" parameterType="java.lang.Integer">
+		DELETE 
+		FROM 
+		lbadvisor_user_log 
+		WHERE 
+		id=#{id}
+	</delete>
+	
+</mapper> 

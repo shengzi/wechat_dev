@@ -134,7 +134,16 @@
 		WHERE 
 		id=#{id}
 	</update>
-	
+
+	<!-- 获取LbadvisorUserLog详情 -->
+	<select id="getByUserId" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+		SELECT
+		<include refid="Base_Column_List"/>
+		FROM lbadvisor_user_log l
+		WHERE
+		l.user_id=#{userId}
+	</select>
+
 	<!-- 删除LbadvisorUserLog -->
 	<delete id="delete" parameterType="java.lang.Integer">
 		DELETE 

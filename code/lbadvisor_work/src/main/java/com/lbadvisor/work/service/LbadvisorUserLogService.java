@@ -1,5 +1,8 @@
 package com.lbadvisor.work.service;
 
+import com.lbadvisor.work.dao.LbadvisorUserDao;
+import com.lbadvisor.work.entity.LbadvisorUser;
+import com.lbadvisor.work.utils.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -7,6 +10,8 @@ import com.lbadvisor.work.entity.LbadvisorUserLog;
 import com.lbadvisor.work.utils.orm.mybatis.MyBatisDao;
 import com.lbadvisor.work.utils.orm.mybatis.MyBatisService;
 import com.lbadvisor.work.dao.LbadvisorUserLogDao;
+
+import java.util.List;
 
 /**
  * 
@@ -21,6 +26,9 @@ public class LbadvisorUserLogService extends MyBatisService<LbadvisorUserLog, In
 
 	@Autowired
 	private LbadvisorUserLogDao lbadvisorUserLogDao;
+
+	@Autowired
+	private LbadvisorUserDao lbadvisorUserDao;
 
 
 	/**
@@ -64,6 +72,21 @@ public class LbadvisorUserLogService extends MyBatisService<LbadvisorUserLog, In
 		return "fail";
 	}
 
+	public Response findUserLogByopenid(String openid) {
+		if (null  == openid) {
+			return new Response().failure( "openid is null ! " );
+		}
+		LbadvisorUser user = lbadvisorUserDao.getByOpenId( openid );
+		if (null == user) {
+			return new Response().failure( "This user is not exist ! " );
+		}
+		int userId = user.getId();
+		List<LbadvisorUserLog> lbadvisorUserLogDaoByUserId = lbadvisorUserLogDao.getByUserId( String.valueOf( userId ) );
+		if (null == lbadvisorUserLogDaoByUserId) {
+			return new Response().failure( "This userLog is not exist ! " );
+		}
+		return new Response().success(lbadvisorUserLogDaoByUserId);
+	}
 	@Override
 	public MyBatisDao<LbadvisorUserLog, Integer> getMyBatisDao() {
 		return lbadvisorUserLogDao;
