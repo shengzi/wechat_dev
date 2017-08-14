@@ -1,0 +1,23 @@
+.log-input {
+  display: flex;
+  flex-direction: row;
+  padding: 30rpx;
+  border: 2px;
+  border-radius: 40px;
+}
+
+.log-but {
+  background-color: #ECF5FF;
+  margin-top: 400rpx;
+  width: 90%
+}
+.bg-g{
+  background: #ECF5FF;
+}
+.bg-w {
+  background: #E6E6F2;
+  border-radius:40px;
+}
+.center {
+  margin: auto
+}
