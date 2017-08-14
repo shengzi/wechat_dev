@@ -1,15 +1,15 @@
 {
-  "pages":[
+  "pages": [
     "pages/index/index",
     "pages/logs/logs",
-    "pages/post/post",
-    "pages/addlog/addlog"
+    "pages/addlog/addlog",
+    "pages/logList/logList"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor":"#444",
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#444",
     "navigationBarTitleText": "比邻日志",
-    "navigationBarTextStyle":"white"
+    "navigationBarTextStyle": "white"
   },
   "tabBar": {
     "color": "#000",
@@ -18,11 +18,11 @@
       {
         "pagePath": "pages/index/index",
         "text": "主页"
-       },
+      },
       {
         "pagePath": "pages/post/post",
         "text": "我的日志"
-        }
+      }
     ]
   },
   "debug": true
