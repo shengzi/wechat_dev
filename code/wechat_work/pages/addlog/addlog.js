@@ -90,9 +90,12 @@ Page({
     
   },
   formSubmit: function (e) {
+    wx.redirectTo({
+      url: '../post/post'
+    }) 
     var formData = e.detail.value;
     wx.request({
-      url: 'http://localhost:8080/lbadvisor_work/whchat/v1/log/save',
+      url: 'http://localhost:8080/whchat/userLog/save',
       method:'POST',
       data: formData,
       header: {
@@ -100,8 +103,7 @@ Page({
       },
       success: function (res) {
         //跳转至日志列表首页
-        console.log(res.data)
       }
-    })  
+    })
   }
 })
