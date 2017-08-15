@@ -99,12 +99,15 @@ Page({
         'Content-Type': 'application/x-www-form-urlencoded'
       },
       success: function (res) {
-        wx.redirectTo({
-          url: '../logList/logList'
+        wx.showToast({
+          image: "../image/verygood.png",
+          duration: 1000
         })
-      },
-      complete: function () {
-       
+        setTimeout(function(){
+          wx.switchTab({
+            url: '../logList/logList'
+          })
+        },500)
       }
     });
   }

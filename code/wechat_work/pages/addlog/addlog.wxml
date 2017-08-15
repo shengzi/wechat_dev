@@ -2,18 +2,19 @@
   <text class="page-header-text">{{title}}</text>
 </view>
 <form class="page-form" bindsubmit="formSubmit">
+  <input name="openid" hidden="hidden" value="{{openid}}"/>
   <picker bindchange="bindPickerChange" name="workProudctName" value="{{index}}" range="{{array}}">
     <view class="item">
       <image class="img" src="../image/product.png"></image><text>产品</text>
       <text class="imgtext">{{array[index]}}</text>
-       <text class="imgtextflag">></text> 
+       <text>></text> 
    </view>
   </picker>
   <picker bindchange="bindPickerChangeHour" name="workHour" value="{{hourIndex}}" range="{{hourArray}}">
     <view class="houritem">
       <image class="img" src="../image/time.png"></image><text>时间</text>
       <text class="imgtext">{{hourArray[hourIndex]}}</text>
-       <text class="imgtextflag2">></text> 
+       <text>></text> 
    </view> 
   </picker>
     <view class="conitem">
@@ -22,28 +23,5 @@
    <view>
       <textarea class="context" placeholder="......" name="userLog" value=""/>
     </view>
-  <button class="log-but" formType="submit" type="primary" hover-class="other-hover">提交</button>
+  <button class="log-but" formType="submit" plain="true" type="primary" hover-class="other-hover">提交</button>
 </form>
-
-<!-- <form bindsubmit="formSubmit" bindreset="formReset">
-    <picker bindchange="bindPickerChange" name="workProudctName" value="{{index}}" range="{{array}}">
-      <view class="log-input bg-g" style="padding-bottom:20rpx">
-        <view>产品 :</view>
-        <view class="center">{{array[index]}}</view>
-      </view>
-    </picker>
-    <picker bindchange="bindPickerChangeHour" name="workHour" value="{{hourIndex}}" range="{{hourArray}}">
-      <view class="log-input bg-w">
-        <view>小时 :</view>
-        <view class="center"> {{hourArray[hourIndex]}}</view>
-      </view>
-    </picker>
-    <view class="log-input bg-g">
-      <view>备注</view>
-      <input name="openid" hidden="hidden" value="{{openid}}"/>
-    </view>
-    <view class="bg-w">
-      <view><textarea name="userLog" value="    "/></view>
-    </view>
-    <button class="log-but" formType="submit" type="primary" hover-class="other-hover">提交</button>
-</form> -->

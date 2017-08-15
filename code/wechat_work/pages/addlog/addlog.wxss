@@ -57,13 +57,8 @@ page{
   margin-right: 10rpx；
 }
 .imgtext{
-  margin-left: 22%
-}
-.imgtextflag{
-  margin-left: 250rpx
-}
-.imgtextflag2{
-  margin-left: 362rpx
+  margin-left: 22%;
+  width: 360rpx
 }
 .context {
   padding-left: 80rpx
