@@ -1,21 +1,70 @@
-.log-input {
-  display: flex;
-  flex-direction: row;
-  padding: 30rpx;
-  border: 2px
-}
 
 .log-but {
-  background-color: #ECF5FF;
-  margin-top: 400rpx;
-  width: 90%
+  margin-top: 480rpx;
+  width: 100%;
+  font-weight: bold
 }
-.bg-g{
-  background: #ECF5FF;
+.other-hover{
+  opacity: 0.375
 }
-.bg-w {
-  background: #E6E6F2
+page{
+  font-family: Microsoft YaHei;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column
 }
-.center {
-  margin: auto
+.page-header{
+  display: flex;
+  justify-content: center;
+  border-bottom: 2rpx solid #ccc;
+  margin-bottom: 10rpx
+}
+.page-header-text{
+  padding: 20rpx 40rpx;
+  color: #999;
+  font-size: 40rpx
+}
+.page-form{
+  display: flex;
+  flex: 1;
+  flex-direction: column
+}
+.item{
+  display: flex;
+  padding: 20rpx 40rpx;
+  border-bottom: 2rpx solid #eee;
+  color: #999;
+  font-size: 36rpx;
+  background-color: #FCFCFC
+}
+.houritem{
+  display: flex;
+  padding: 20rpx 40rpx;
+  border-bottom: 2rpx solid #eee;
+  color: #999;
+  font-size: 36rpx;
+}
+.conitem{
+  display: flex;
+  padding: 20rpx 40rpx;
+  color: #999;
+  font-size: 36rpx;
+  background-color: #FCFCFC
+}
+.img {
+  width: 39rpx;
+  height: 39rpx;
+  margin-right: 10rpx；
+}
+.imgtext{
+  margin-left: 22%
+}
+.imgtextflag{
+  margin-left: 250rpx
+}
+.imgtextflag2{
+  margin-left: 362rpx
+}
+.context {
+  padding-left: 80rpx
 }
