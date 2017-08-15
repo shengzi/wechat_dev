@@ -107,7 +107,13 @@ Page({
           wx.switchTab({
             url: '../logList/logList'
           })
-        },500)
+        },500),
+        wx.redirectTo({
+          url: '../logList/logList'
+        })
+      },
+      complete: function () {
+       
       }
     });
   }

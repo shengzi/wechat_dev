@@ -60,6 +60,11 @@ page{
   margin-left: 22%;
   width: 360rpx
 }
+.img {
+  width: 39rpx;
+  height: 39rpx;
+  margin-right: 10rpx；
+}
 .context {
   padding-left: 80rpx
 }
