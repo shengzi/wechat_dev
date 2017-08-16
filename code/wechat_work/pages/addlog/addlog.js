@@ -7,7 +7,7 @@ Page({
    */
   data: {
     openid: "",
-    title:"创建日志",
+    title:"写日志",
     array: ['东易cim', 'asm智投', 'A米'],
     index: 0,
     hourArray: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],

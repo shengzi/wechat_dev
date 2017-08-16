@@ -12,6 +12,34 @@ Page({
       url: '../addlog/addlog'
     })
   },
+  //跳转日志列表
+  tologlist: function(){
+    wx.switchTab({
+      url: '../logList/logList',
+    })
+  },
+  //跳转添加页面
+  tosavelog: function(){
+    wx.navigateTo({
+      url: '../addlog/addlog',
+    })
+  },
+  //最近一周日志
+  today7log: function(){
+    wx.switchTab({
+      url: '../logList/logList',
+    })
+  },
+  //跳转asm智投
+  toasmzt: function(){
+  },
+  //跳转app反欺诈
+  toappfqz: function(){
+  },
+  //跳转营销数据解决方案
+  toyxshu: function(){
+
+  },
   onLoad: function () {
     console.log('onLoad');
     app.onLaunch();

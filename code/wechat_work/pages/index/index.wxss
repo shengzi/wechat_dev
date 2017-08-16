@@ -19,3 +19,65 @@
 .usermotto {
   margin-top: 200px;
 }
+/** banner */
+.page-header{
+  display: flex
+}
+.page-header-image{
+  width: 100%
+}
+.prompttext{
+  display: flex;
+  justify-content: flex-start;
+  padding: 36rpx 40rpx;
+  color: #999;
+  background-color:#F0F0F0;
+  font-size: 30rpx;
+  font-weight: lighter
+}
+/** 功能模块 **/
+.function{
+  display: flex;
+  flex-direction: row;
+}
+.function1{
+  text-align: center;
+  background-color: white;
+  width: 100%;
+  height: 220rpx;
+  border-bottom: 2rpx solid #eee;
+  border-right: 2rpx solid #eee;
+  color: #999;
+  font-size: 34rpx
+}
+.function2{
+  text-align: center;
+  background-color: white;
+  width: 100%;
+  height: 220rpx;
+  border-bottom: 2rpx solid #eee;
+  border-right: 2rpx solid #eee;
+  color: #999;
+  font-size: 34rpx
+}
+.function3{
+  text-align: center;
+  background-color: white;
+  width: 100%;
+  height: 220rpx;
+  border-bottom: 2rpx solid #eee;
+  color: #999;
+  font-size: 34rpx
+}
+.log{
+  margin-top: 16rpx;
+  width: 160rpx;
+  height: 150rpx;
+}
+
+/** 尾部 */
+.foot{
+  padding: 58rpx 40rpx;
+  background-color: #F0F0F0
+}
+

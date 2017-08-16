@@ -12,16 +12,22 @@
     "navigationBarTextStyle": "white"
   },
   "tabBar": {
+    "backgroundColor": "#F0F0F0",
     "color": "#000",
     "selectedColor": "pink",
     "list": [
       {
         "pagePath": "pages/index/index",
-        "text": "主页"
+        "text": "主页",
+        "iconPath":"pages/image/index.png",
+        "selectedIconPath": "pages/image/index.png",
+        "selectedColor": "red"
       },
       {
         "pagePath": "pages/logList/logList",
-        "text": "我的日志"
+        "text": "我的",
+        "iconPath": "pages/image/my.png",
+        "selectedIconPath": "pages/image/my.png"
       }
     ]
   },

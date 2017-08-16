@@ -1,5 +1,38 @@
+<view class="page-header">
+   <image class="page-header-image" src="../image/header.jpeg"></image>
+</view>
+<view class="prompttext" ><text></text></view>
+<view class="function">
+  <view class="function1" bindtap="tologlist">
+    <image class="log" src="../image/loglist.png"></image>
+    <view>DIARY</view>
+  </view>
+  <view class="function2" bindtap="tosavelog">
+    <image class="log" src="../image/wrilog.png"></image>
+    <view>WRILOG</view>
+  </view>
+  <view class="function3" bindtap="today7log">
+    <image class="log" src="../image/day7.png"></image>
+    <view>DAY7</view>
+  </view>
+</view>
+<view class="function">
+  <view class="function1" bindtap="toasmzt">
+    <image class="log" src="../image/ASMZT.png"></image>
+    <view>asm智投</view> 
+  </view>
+  <view class="function2">
+    <image class="log" src="../image/appfqz.png"></image>
+    <view>app反欺诈</view> 
+  </view>
+  <view class="function3">
+    <image class="log" src="../image/YXSJ.png"></image>
+    <view>营销数据</view> 
+  </view>
+</view>
+<view class="foot"></view>
 <!--index.wxml-->
-<view class="container">
+<!-- <view class="container">
   <view  bindtap="bindViewTap" class="userinfo">
     <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
     <text class="userinfo-nickname">{{userInfo.nickName}}</text>
@@ -7,4 +40,4 @@
   <view class="usermotto">
     <text class="user-motto">{{motto}}</text>
   </view>
-</view>
+</view> -->
