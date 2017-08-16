@@ -14,7 +14,7 @@ Page({
   },
   //跳转日志列表
   tologlist: function(){
-    wx.switchTab({
+    wx.navigateTo({
       url: '../logList/logList',
     })
   },

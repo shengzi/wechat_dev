@@ -104,16 +104,12 @@ Page({
           duration: 1000
         })
         setTimeout(function(){
-          wx.switchTab({
-            url: '../logList/logList'
+          wx.redirectTo({
+            url: '../logList/logList',
           })
-        },500),
-        wx.redirectTo({
-          url: '../logList/logList'
-        })
+        },500)
       },
       complete: function () {
-       
       }
     });
   }

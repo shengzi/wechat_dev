@@ -28,12 +28,8 @@
 }
 .prompttext{
   display: flex;
-  justify-content: flex-start;
-  padding: 36rpx 40rpx;
-  color: #999;
-  background-color:#F0F0F0;
-  font-size: 30rpx;
-  font-weight: lighter
+  padding: 73rpx 40rpx;
+  background-color: #F0F0F0
 }
 /** 功能模块 **/
 .function{
@@ -77,7 +73,7 @@
 
 /** 尾部 */
 .foot{
-  padding: 58rpx 40rpx;
+  padding: 73rpx 40rpx;
   background-color: #F0F0F0
 }
 

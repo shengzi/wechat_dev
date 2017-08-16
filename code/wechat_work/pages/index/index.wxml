@@ -1,7 +1,7 @@
 <view class="page-header">
    <image class="page-header-image" src="../image/header.jpeg"></image>
 </view>
-<view class="prompttext" ><text></text></view>
+<view class="prompttext" ></view>
 <view class="function">
   <view class="function1" bindtap="tologlist">
     <image class="log" src="../image/loglist.png"></image>
